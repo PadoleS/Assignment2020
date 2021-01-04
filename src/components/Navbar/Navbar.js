@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 import { connect } from "react-redux";
+import Address from '../Address/Address'
 
 const Navbar = ({ cart }) => {
   const [cartCount, setCartCount] = useState(0);
@@ -21,8 +22,11 @@ const Navbar = ({ cart }) => {
       <Link to="/">
         <h2 className={styles.navbar__logo}>Redux Shopping Cart</h2>
       </Link>
+      <div className={styles.navbar__cart}>
+      <Address/>
+</div>
       <Link to="/cart">
-        <div className={styles.navbar__cart}>
+        <div className={styles.navbar__address}>
           <h3 className={styles.cart__title}>Cart</h3>
           <img
             className={styles.cart__image}

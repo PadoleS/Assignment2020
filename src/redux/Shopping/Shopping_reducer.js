@@ -23,11 +23,7 @@ const INITIAL_STATE = {
         price: 20.0,
         image:
           "https://images.unsplash.com/photo-1572119865084-43c285814d63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-        address1:'',
-        address2:'',
-        Country:'',
-        state:'',
-        city:''
+       
         },
       {
         id: 3,
@@ -37,17 +33,13 @@ const INITIAL_STATE = {
         price: 150.0,
         image:
           "https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1374&q=80",
-          address1:'',
-          address2:'',
-          Country:'',
-          state:'',
-          city:''
          
         },
 
     ],
     cart: [],
     currentItem: null,
+    address:[]
     
   };
   
@@ -88,13 +80,12 @@ const INITIAL_STATE = {
           currentItem: action.payload,
         };
         case actionTypes.ADD_ADDRESS:
+          console.log("hello")
         return{
-          ...state,
-          address: state.cart.map((item) =>
-            item.id === action.payload.id
-              ? { ...item, address1: +action.payload.address1 }
-              : item
-          ),        }
+         ...state,
+         address:[action.payload]
+         
+        }
       default:
         return state;
     }

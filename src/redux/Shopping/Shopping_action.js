@@ -27,16 +27,10 @@ export const adjustItemQty = (itemID, qty) => {
     };
   };
 
-  export const addAddress = (itemId,address1,address2,Country, state,City) => {
+  export const addAddress = (address) => {
+    console.log(address)
     return {
       type: actionTypes.ADD_ADDRESS,
-      payload: {
-        id:itemId,
-        address1,
-        address2,
-        Country,
-        state,
-        City
-      }
+      payload: address
     };
   };
